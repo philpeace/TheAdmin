@@ -1,0 +1,10 @@
+﻿@model dynamic
+@if (Model.CurrentUser != null)
+{
+    <ul class="nav pull-right">
+        <li class="navbar-text">
+            @T("User:") @Convert.ToString(Html.ItemDisplayText((Orchard.ContentManagement.IContent)Model.CurrentUser))
+        </li>
+        <li>@Html.ActionLink(T("Logout").ToString(), "LogOff", new { Area = "Orchard.Users", Controller = "Account" })</li>
+    </ul>
+}
